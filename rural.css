@@ -1,0 +1,166 @@
+/* ======== RESET ======== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  background-color: #083d18;
+  color: #e0f7df;
+  line-height: 1.6;
+}
+
+/* ======== HEADER ======== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #062e12;
+  padding: 15px 8%;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #a8f3b8;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: #c8f9d5;
+  text-decoration: none;
+  font-size: 0.95em;
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: #72ff8f;
+}
+
+.btn {
+  padding: 6px 12px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.btn-outline {
+  border: 1px solid #56c26a;
+}
+
+.btn-outline:hover {
+  background-color: #56c26a;
+  color: #052c10;
+}
+
+.btn-solid {
+  background-color: #56c26a;
+  color: #052c10;
+  text-decoration: none;
+}
+
+.btn-solid:hover {
+  background-color: #74e48b;
+}
+
+/* ======== MAIN ======== */
+main {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.intro {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.step {
+  background-color: #0a4b1f;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+.step:hover {
+  transform: translateY(-3px);
+  background-color: #0c5826;
+}
+
+.step h3 {
+  color: #90f4a2;
+  margin-bottom: 10px;
+  font-size: 1.1em;
+}
+
+/* ======== FOOTER ======== */
+footer {
+  background-color: #062e12;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+footer p {
+  font-size: 0.9em;
+  color: #b2e7b8;
+  max-width: 800px;
+}
+
+footer a {
+  color: #6be684;
+  text-decoration: underline;
+}
+
+.btn-accept {
+  background-color: #56c26a;
+  color: #052c10;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.btn-accept:hover {
+  background-color: #74e48b;
+}
+
+/* ======== RESPONSIVO ======== */
+@media (max-width: 700px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  header {
+    align-items: flex-start;
+  }
+
+  main {
+    padding: 10px;
+  }
+
+  footer p {
+    font-size: 0.85em;
+  }
+}
