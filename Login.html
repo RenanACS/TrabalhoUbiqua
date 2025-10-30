@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CredCarbo - Login Seguro</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#11d442",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#102215",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-white">
+<div class="relative flex min-h-screen w-full flex-col">
+<div class="flex h-full grow flex-col">
+<header class="absolute top-0 left-0 right-0 z-10 p-6 md:px-10 md:py-8">
+<div class="flex items-center gap-4 text-white">
+<div class="size-6 text-primary">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-white text-xl font-bold leading-tight tracking-[-0.015em]">CredCarbo</h2>
+</div>
+</header>
+<main class="flex min-h-screen flex-1">
+<div class="relative hidden w-1/2 flex-col justify-end bg-gray-900 p-12 lg:flex">
+<img class="absolute inset-0 h-full w-full object-cover" data-alt="A person holding a small plant with lush green leaves, symbolizing growth and environmental care." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgXb5d812GoSIB8nDFnueSsidhgVpwUkEQmEo51pXw_OS6U6A9SPMTqiPjiihSKjOkAyukPPoRR0twQlhtpUdvKkTnojqdeQiZ58iaDWNmq__pKd5iHknAhocqX_JSt9tGbJWYakqcHW-C1hy6GrNxylT__lS2gg2yL9JlODxAAuZk3teORtOG-uN--qxhku58iWp1GiAtAY2DiXbI6nu1CIjW2uv6zw3SnTXRTexUGzT1Cygw379BJ3fzehZCT5bf5ANtae0yfoE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent"></div>
+<div class="relative z-10">
+<h1 class="text-4xl font-black text-white leading-tight tracking-[-0.033em] xl:text-5xl">Negociando por um Futuro Mais Verde.</h1>
+<p class="mt-4 text-lg text-white/80">O Marketplace para um Planeta Sustentável.</p>
+</div>
+</div>
+<div class="flex w-full flex-1 items-center justify-center p-6 lg:w-1/2 bg-background-light dark:bg-background-dark">
+<div class="w-full max-w-md space-y-8 px-4">
+<div>
+<p class="text-4xl font-black leading-tight tracking-[-0.033em] text-gray-800 dark:text-white">Login Seguro</p>
+<p class="mt-2 text-base font-normal leading-normal text-gray-600 dark:text-gray-400">Por favor, insira suas credenciais para acessar sua conta.</p>
+</div>
+<form class="space-y-6">
+<div>
+<p class="text-sm font-medium text-gray-700 dark:text-gray-300 pb-2">Entrar como</p>
+<div class="grid grid-cols-2 gap-2 rounded-lg bg-gray-200 dark:bg-gray-800 p-1">
+<label class="relative">
+<input checked="" class="peer sr-only" name="role" type="radio" value="user"/>
+<div class="cursor-pointer rounded-md py-2 text-center text-sm font-semibold text-gray-700 dark:text-gray-300 peer-checked:bg-white dark:peer-checked:bg-gray-900 peer-checked:shadow-sm">Usuário Padrão</div>
+</label>
+<label class="relative">
+<input class="peer sr-only" name="role" type="radio" value="admin"/>
+<div class="cursor-pointer rounded-md py-2 text-center text-sm font-semibold text-gray-700 dark:text-gray-300 peer-checked:bg-white dark:peer-checked:bg-gray-900 peer-checked:shadow-sm">Administrador</div>
+</label>
+</div>
+</div>
+<div class="space-y-4">
+<div>
+<label class="flex flex-col min-w-40 flex-1">
+<p class="text-sm font-medium leading-normal pb-2 text-gray-700 dark:text-gray-300">E-mail / Nome de Usuário</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 focus:border-primary focus:ring-2 focus:ring-primary/20 h-12 px-4 text-base font-normal leading-normal text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500" placeholder="Digite seu e-mail ou nome de usuário" type="text" value=""/>
+</label>
+</div>
+<div>
+<label class="flex flex-col min-w-40 flex-1">
+<div class="flex items-center justify-between pb-2">
+<p class="text-sm font-medium leading-normal text-gray-700 dark:text-gray-300">Senha</p>
+<a class="text-sm font-medium text-primary/80 hover:text-primary" href="#">Esqueceu a Senha?</a>
+</div>
+<div class="relative flex w-full flex-1 items-stretch">
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 focus:border-primary focus:ring-2 focus:ring-primary/20 h-12 pl-4 pr-12 text-base font-normal leading-normal text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500" placeholder="Digite sua senha" type="password" value=""/>
+<button class="absolute inset-y-0 right-0 flex items-center pr-4 text-gray-400 hover:text-gray-600 dark:text-gray-500 dark:hover:text-gray-300" type="button">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+</button>
+</div>
+</label>
+</div>
+</div>
+<div>
+<button class="flex w-full items-center justify-center rounded-lg bg-primary py-3 text-base font-bold text-white transition-colors hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-background-dark" type="submit">Entrar</button>
+</div>
+</form>
+<p class="text-center text-sm text-gray-600 dark:text-gray-400">
+                        Não tem uma conta? <a class="font-medium text-primary hover:underline" href="#">Registrar</a>
+</p>
+</div>
+</div>
+</main>
+</div>
+<footer class="w-full border-t border-gray-200 dark:border-gray-800 bg-background-light dark:bg-background-dark">
+<div class="mx-auto max-w-7xl px-6 py-4">
+<div class="flex flex-col items-center justify-between gap-4 sm:flex-row">
+<p class="text-sm text-gray-500 dark:text-gray-400">© 2024 Carbon Exchange. Todos os direitos reservados.</p>
+<div class="flex items-center gap-6">
+<a class="text-sm text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white" href="#">Central de Ajuda</a>
+<a class="text-sm text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white" href="#">Termos de Serviço</a>
+<a class="text-sm text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white" href="#">Política de Privacidade</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+
+</body></html>
