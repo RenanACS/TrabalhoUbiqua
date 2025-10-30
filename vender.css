@@ -1,0 +1,520 @@
+/* Configurações Globais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* O BLOCO DE CSS DO .navbar FOI REMOVIDO */
+
+/* ======== SEÇÃO PRINCIPAL (HERO) ======== */
+.hero-section {
+    position: relative;
+    min-height: 80vh;
+    background-image: linear-gradient(to right, rgba(20, 80, 40, 0.85), rgba(40, 120, 70, 0.7)), url('https://via.placeholder.com/1500x800.png?text=Fundo+Natureza');
+    background-size: cover;
+    background-position: center;
+    /* Padding do topo foi reduzido de 120px para 60px */
+    padding: 60px 5% 50px 5%; 
+    color: white;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-text-left h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.hero-text-left p {
+    font-size: 1.2rem;
+}
+
+.hero-text-right {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 25px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.scroll-down-arrow {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #5cb85c;
+    font-size: 20px;
+    z-index: 5;
+}
+
+/* ======== SEÇÃO DO FORMULÁRIO ======== */
+.form-container {
+    background-color: white;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 60px;
+    border-radius: 15px 15px 0 0;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+    margin-top: -100px; 
+    position: relative;
+    z-index: 9;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+/* Botão de Envio */
+.btn-submit {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(to right, #5cb85c, #4cae4c);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-submit:hover {
+    background: linear-gradient(to right, #4cae4c, #5cb85c);
+}
+
+/* =====================================================
+   == NOVOS ESTILOS PARA OS CARDS DE PROJETO (VENDER) ==
+   =====================================================
+*/
+
+.project-cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 15px;
+}
+
+.project-card input[type="checkbox"] {
+    display: none;
+}
+
+.project-card .card-content {
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 25px 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.project-card .card-content i {
+    font-size: 2.5rem;
+    color: #5cb85c;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.project-card .card-content span {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #555;
+}
+
+.project-card .card-content:hover {
+    border-color: #5cb85c;
+    background-color: #f9fef9;
+}
+
+.project-card input[type="checkbox"]:checked ~ .card-content {
+    border-color: #4cae4c;
+    background-color: #5cb85c;
+}
+
+.project-card input[type="checkbox"]:checked ~ .card-content i,
+.project-card input[type="checkbox"]:checked ~ .card-content span {
+    color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    .project-cards-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ========================================
+   ESTILOS DA NOVA SEÇÃO (Validação)
+   ======================================== */
+
+/* Nota: Esta seção usa variáveis de cor que você 
+   provavelmente já definiu no seu CSS. 
+   Se não, aqui estão elas como referência.
+*/
+:root {
+    --primary-color: #006400; /* Verde escuro para o tema */
+    --card-bg: #ffffff;
+    --border-color: #ddd;
+    --text-color: #333;
+}
+
+.validation-process {
+    padding: 60px 20px;
+    background-color: #fff; /* Fundo branco para esta seção */
+}
+
+.validation-process .container {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.validation-process h2 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.validation-process p {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.steps-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Uma coluna por padrão */
+    gap: 25px;
+}
+
+.step-card {
+    display: flex;
+    align-items: flex-start; /* Alinha ícone e texto no topo */
+    text-align: left;
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.step-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-right: 25px;
+    min-width: 50px; /* Garante espaço para o ícone */
+    text-align: center;
+}
+
+.step-text h3 {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+    color: var(--text-color);
+}
+
+.step-text p {
+    font-size: 1rem;
+    margin-bottom: 0;
+    line-height: 1.5;
+    color: #555;
+}
+
+
+@media (max-width: 768px) {
+    .step-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .step-icon {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+}
+/* Encontre sua regra de CSS existente para os inputs 
+   e ADICIONE ", .form-group input[type="number"]" 
+*/
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="number"], /* <-- ADICIONE ESTA LINHA */
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color); /* Supondo que você usa variáveis */
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Faça o mesmo para a regra de :focus 
+*/
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="number"]:focus, /* <-- ADICIONE ESTA LINHA */
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color); /* Supondo que você usa variáveis */
+    box-shadow: 0 0 5px rgba(0, 100, 0, 0.2);
+}
+
+/* OPCIONAL: Adicione este novo bloco de CSS 
+   para esconder as setas de "para cima/para baixo" 
+   no campo de número, deixando-o com a aparência
+   limpa de um campo de texto.
+*/
+.form-group input[type="number"]::-webkit-outer-spin-button,
+.form-group input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.form-group input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+/* ========================================
+   CSS PARA O CAMPO DE QUANTIDADE EM DESTAQUE
+   (Inclui a caixa, o texto de ajuda e o texto de preço)
+   ======================================== */
+
+.form-group-highlight {
+    /* Cor de fundo sutil (um verde bem claro) */
+    background-color: #f0f9f0; 
+    
+    /* Borda sutil na cor do tema */
+    /* Usando a cor verde clara do seu 'btn-submit' como fallback */
+    border: 1px solid var(--accent-color, #5cb85c); 
+    
+    border-radius: 8px; /* Cantos arredondados */
+    padding: 24px; /* Espaçamento interno */
+    margin: 25px 0; /* Espaçamento externo (vertical) */
+    box-shadow: 0 4px 10px rgba(0, 100, 0, 0.05); /* Sombra leve */
+}
+
+/* Remove a margem interna do .form-group que está dentro do destaque */
+.form-group-highlight .form-group {
+    margin-bottom: 0;
+}
+
+/* Estilo para o label dentro do destaque */
+.form-group-highlight label {
+    /* Usando a cor primária que você definiu */
+    color: var(--primary-color, #006400); 
+    font-size: 1.1rem; /* Fonte um pouco maior */
+    font-weight: 700;
+}
+
+/* Estilo para o texto de ajuda (da estrela) */
+.helper-text {
+    font-size: 0.9rem;
+    color: #333; /* Cor do texto */
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #fff; /* Fundo branco para o texto de ajuda */
+    border-radius: 5px;
+    border: 1px solid #e0e0e0;
+    display: inline-block; /* Faz o fundo se ajustar ao texto */
+}
+
+.helper-text i {
+    margin-right: 8px;
+    /* A cor dourada (#FFD700) foi definida direto no HTML */
+}
+
+/* Estilo para o texto de informação de preço (dos $10) */
+.price-info-text {
+    font-size: 1rem; /* Tamanho de fonte padrão */
+    color: var(--primary-color, #006400); /* Cor primária (verde) */
+    font-weight: 500; /* Peso médio */
+    margin-top: 15px; /* Espaço acima para separar do texto de ajuda */
+    padding: 12px;
+    background-color: #fff; /* Fundo branco para destacar */
+    border-radius: 5px;
+    border: 1px solid var(--border-color, #ddd); /* Borda sutil */
+    line-height: 1.5; /* Espaçamento entre linhas */
+}
+
+.price-info-text i {
+    margin-right: 10px;
+    color: var(--accent-color, #5cb85c); /* Cor de destaque (verde mais claro) */
+}
+
+.price-info-text strong {
+    font-weight: 700;
+    /* A cor será herdada (verde) */
+}
+
+/* ========================================
+   CSS DA ANIMAÇÃO DO BOTÃO E MODAL
+   ======================================== */
+
+/* --- Animação do Botão "Carregando" --- */
+.btn-submit {
+    position: relative; /* Necessário para centralizar o spinner */
+}
+
+.btn-submit .spinner {
+    display: none; /* Escondido por padrão */
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+    margin-right: 10px;
+    vertical-align: middle; /* Alinha o spinner com o texto */
+}
+
+/* Classe que o JavaScript vai adicionar */
+.btn-submit--loading .spinner {
+    display: inline-block; /* Mostra o spinner */
+}
+.btn-submit--loading .btn-text {
+    vertical-align: middle;
+}
+
+/* Desabilita o botão enquanto carrega */
+.btn-submit:disabled {
+    background: linear-gradient(to right, #888, #777);
+    cursor: not-allowed;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+
+/* --- Estilo da Janela Modal (Pop-up) --- */
+.modal-overlay {
+    display: none; /* Escondido por padrão */
+    position: fixed; /* Fica por cima de tudo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Classe que o JavaScript vai adicionar para mostrar */
+.modal-overlay.show {
+    display: flex; 
+}
+
+.modal-content {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 500px;
+    width: 90%; /* Responsivo */
+    position: relative;
+    /* Animação de surgimento */
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.modal-icon {
+    font-size: 3.5rem;
+    color: var(--primary-color, #006400); /* Usa a cor do seu tema */
+    margin-bottom: 20px;
+}
+
+.modal-content h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.modal-content p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2rem;
+    color: #aaa;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+.modal-close:hover {
+    color: #333;
+}
+
+/* Botão de fechar o modal */
+.btn-modal-close {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    /* Reutiliza o estilo do seu botão de submit */
+    background: linear-gradient(to right, #5cb85c, #4cae4c);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+.btn-modal-close:hover {
+    background: linear-gradient(to right, #4cae4c, #5cb85c);
+}
