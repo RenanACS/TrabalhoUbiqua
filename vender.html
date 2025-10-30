@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vender Créditos de Carbono</title>
+    <link rel="stylesheet" href="vender.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <main class="hero-section">
+        <div class="hero-content">
+            <div class="hero-text-left">
+                <h1>Vender Créditos de Carbono</h1>
+                <p>Preencha o formulário ou entre em contato conosco através de nossos canais de atendimento para podermos avaliar a viabilidade de seu projeto:</p>
+            </div>
+            <div class="hero-text-right">
+                <p>Você possui uma área florestal, de manejo sustentável ou projeto de energias renováveis (eólica ou solar) e gostaria de analisar a viabilidade e vender seus créditos de carbono?</p>
+                <p>A CredCarbo atua em todas as etapas de seu projeto de créditos de carbono, desde a viabilidade até a comercialização e pagamento dos créditos.</p>
+            </div>
+        </div>
+        
+        <div class="scroll-down-arrow">
+            <i class="fas fa-arrow-down"></i>
+        </div>
+    </main>
+
+    <section class="form-container">
+        
+        <section class="validation-process">
+            <div class="container">
+                <h2>Como funciona a validação?</h2>
+                <p>Seu projeto passa por etapas rigorosas de auditoria para garantir a qualidade e a veracidade dos créditos de carbono gerados.</p>
+                
+                <div class="steps-container">
+                    
+                    <div class="step-card">
+                        <div class="step-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="step-text">
+                            <h3>1. Análise e Viabilidade</h3>
+                            <p>Nossa equipe analisa seu projeto para garantir que ele se enquadra nas metodologias de um padrão internacional (como VCS/Verra).</p>
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-icon">
+                            <i class="fas fa-check-double"></i>
+                        </div>
+                        <div class="step-text">
+                            <h3>2. Validação (Auditoria do Projeto)</h3>
+                            <p>Um auditor independente (VVB) avalia o design do projeto (PDD) para confirmar que ele irá gerar reduções reais de emissões.</p>
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="step-text">
+                            <h3>3. Monitoramento</h3>
+                            <p>Após a aprovação, o projeto é implementado e os dados de redução de emissões são monitorados continuamente.</p>
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-icon">
+                            <i class="fas fa-clipboard-check"></i>
+                        </div>
+                        <div class="step-text">
+                            <h3>4. Verificação (Auditoria dos Créditos)</h3>
+                            <p>O auditor retorna periodicamente para verificar se os dados monitorados são precisos. Esta etapa aprova a "safra" de créditos.</p>
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-icon">
+                            <i class="fas fa-hand-holding-usd"></i>
+                        </div>
+                        <div class="step-text">
+                            <h3>5. Emissão e Venda</h3>
+                            <p>Com a verificação aprovada, os créditos são emitidos oficialmente e ficam disponíveis para negociação no mercado.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <form action="#" method="POST">
+            
+            <div class="form-group">
+                <label for="organizacao">NOME DA ORGANIZAÇÃO *</label>
+                <input type="text" id="organizacao" name="organizacao" value="Silva Carbon Ltda" required>
+            </div>
+
+            <div class="form-group">
+                <label for="nome">SEU NOME *</label>
+                <input type="text" id="nome" name="nome" value="Carlos Silva" required>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="email">SEU E-MAIL *</label>
+                    <input type="email" id="email" name="email" value="carlos.silva@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefone">TELEFONE / WHATSAPP</label>
+                    <input type="text" id="telefone" name="telefone" value="(99) 91234-5678">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="cargo">CARGO NA ORGANIZAÇÃO</label>
+                <input type="text" id="cargo" name="cargo" value="Vendedor" placeholder="Ex: Proprietário, Gerente, Consultor">
+            </div>
+
+            <div class="form-group">
+                <label>QUAL O TIPO DE PROJETO? *</label>
+                <div class="project-cards-container">
+
+                    <label class="project-card">
+                        <input type="checkbox" name="projeto" value="floresta">
+                        <div class="card-content">
+                            <i class="fas fa-tree"></i> <span>Floresta</span>
+                        </div>
+                    </label>
+            
+                    <label class="project-card">
+                        <input type="checkbox" name="projeto" value="plantacao">
+                        <div class="card-content">
+                            <i class="fas fa-seedling"></i> <span>Plantação</span>
+                        </div>
+                    </label>
+
+                    <label class="project-card">
+                        <input type="checkbox" name="projeto" value="eolica">
+                        <div class="card-content">
+                            <i class="fas fa-wind"></i> <span>Energia Eólica</span>
+                        </div>
+                    </label>
+            
+                    <label class="project-card">
+                        <input type="checkbox" name="projeto" value="solar">
+                        <div class="card-content">
+                            <i class="fas fa-sun"></i> <span>Solar</span>
+                        </div>
+                    </label>
+
+                    <label class="project-card">
+                        <input type="checkbox" name="projeto" value="biomassa">
+                        <div class="card-content">
+                            <i class="fas fa-recycle"></i> <span>Biomassa</span>
+                        </div>
+                    </label>
+            
+                    <label class="project-card">
+                        <input type="checkbox" name="projeto" value="outros">
+                        <div class="card-content">
+                            <i class="fas fa-ellipsis-h"></i> <span>Outros</span>
+                        </div>
+                    </label>
+            
+                </div>
+            </div>
+            
+           <div class="form-group-highlight">
+                <div class="form-group">
+                    <label for="quantidade_creditos">QUANTIDADE DE CRÉDITOS QUE DESEJA VENDER (ESTIMATIVA ANUAL) *</label>
+                    <input type="number" id="quantidade_creditos" name="quantidade_creditos" placeholder="Ex: 50000" min="1" required>
+                    
+                    <p class="helper-text">
+                        <i class="fas fa-star" style="color: #FFD700;"></i> 
+                        Esta é a informação principal para nossa análise de viabilidade.
+                    </p>
+
+                    <p class="price-info-text">
+                        <i class="fas fa-dollar-sign"></i> O valor de mercado varia, mas seu projeto pode receber <strong>R$ 40,00</strong> ou mais por cada crédito aprovado.
+                    </p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="detalhes">DESCREVA TODOS OS DETALHES TÉCNICOS</label>
+                <textarea id="detalhes" name="detalhes" rows="8" placeholder="Ex: área ambiental local exato, quantidade em hectares, tipos de culturas, se é reserva, se possui a documentação em seu próprio nome, se possui pressão de desmatamento ao redor, etc."></textarea>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn-submit">
+                    <span class="spinner"></span>
+                    <span class="btn-text">Enviar</span>
+                </button>
+            </div>
+
+        </form>
+    </section>
+    <div id="analiseModal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-icon">
+                <i class="fas fa-hourglass-half"></i>
+            </div>
+            <h2>Sua venda está em análise</h2>
+            <p>Recebemos seus dados. Nossa equipe entrará em contato em breve para os próximos passos.</p>
+            <button id="modalCloseBtn" class="btn-modal-close">Entendido</button>
+        </div>
+    </div>
+
+    <script>
+        // Pega todos os elementos que vamos usar
+        const form = document.querySelector('form');
+        const submitButton = document.querySelector('.btn-submit');
+        const btnText = submitButton.querySelector('.btn-text');
+        
+        const modalOverlay = document.getElementById('analiseModal');
+        const modalCloseBtn = document.getElementById('modalCloseBtn');
+        const modalCloseX = document.querySelector('.modal-close');
+
+        // 1. Ouve o evento de "submit" (envio) do formulário
+        form.addEventListener('submit', function(event) {
+            
+            // Previne que a página recarregue
+            event.preventDefault();
+
+            // --- Inicia a Animação do Botão ---
+            btnText.textContent = 'Enviando...'; // Muda o texto
+            submitButton.classList.add('btn-submit--loading'); // Adiciona a classe do spinner
+            submitButton.disabled = true; // Desabilita o botão
+
+            // --- Simula o tempo de envio (ex: 2.5 segundos) ---
+            // (Aqui você futuramente colocaria o código de envio real)
+            setTimeout(function() {
+                
+                // --- Para a Animação do Botão ---
+                btnText.textContent = 'Enviar'; // Restaura o texto original
+                submitButton.classList.remove('btn-submit--loading'); // Remove a classe
+                submitButton.disabled = false; // Reabilita o botão
+                
+                // --- Mostra o Modal (a "janelinha") ---
+                modalOverlay.classList.add('show');
+
+                // Opcional: Limpa os campos do formulário após o envio
+                form.reset();
+
+            }, 2500); // 2.5 segundos de espera
+        });
+
+        // 2. Função para fechar o modal
+        function fecharModal() {
+            modalOverlay.classList.remove('show');
+        }
+
+        // 3. Adiciona eventos de clique para fechar o modal
+        modalCloseBtn.addEventListener('click', fecharModal); // No botão "Entendido"
+        modalCloseX.addEventListener('click', fecharModal);   // No "X"
+
+        // 4. Opcional: Fechar ao clicar fora da janelinha (no fundo cinza)
+        modalOverlay.addEventListener('click', function(event) {
+            // Se o clique foi no próprio fundo (overlay)
+            if (event.target === modalOverlay) {
+                fecharModal();
+            }
+        });
+    </script>
+
+</body>
+</html>
