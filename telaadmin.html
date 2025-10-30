@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Perfil de Administrador - CredCarbo</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#4CAF50",
+            "background-light": "#F7F9F8",
+            "background-dark": "#121212",
+          },
+          fontFamily: {
+            display: ["Sora", "sans-serif"],
+          },
+          borderRadius: {
+            DEFAULT: "1rem",
+          },
+        },
+      },
+    };
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings:
+      'FILL' 0,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24
+    }
+  </style>
+</head>
+<body class="bg-primary dark:bg-background-dark font-display text-gray-800 dark:text-gray-200 antialiased">
+<div class="flex flex-col items-center justify-center min-h-screen p-4 sm:p-6 lg:p-8">
+<main class="w-full max-w-4xl mx-auto">
+<div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 sm:p-8 md:p-10">
+<div class="flex flex-col sm:flex-row justify-between items-start gap-4">
+<div>
+<h1 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">Perfil do Administrador</h1>
+<p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Status de Último Acesso: 12/07/2024 - 15:30</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+<button class="w-full sm:w-auto flex items-center justify-center gap-2 bg-primary/10 text-primary font-bold py-2 px-4 rounded-lg hover:bg-primary/20 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary dark:focus:ring-offset-gray-800 transition-colors duration-300">
+<span class="material-symbols-outlined">dashboard</span>
+            Dashboard
+        </button>
+<button class="w-full sm:w-auto flex items-center justify-center gap-2 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 font-bold py-2 px-4 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 dark:focus:ring-offset-gray-800 transition-colors duration-300">
+<span class="material-symbols-outlined">logout</span>
+            Logout
+        </button>
+</div>
+</div>
+<div class="border-t border-gray-200 dark:border-gray-700 my-8"></div>
+<div>
+<div class="flex flex-col md:flex-row justify-between items-center gap-4 mb-6">
+<h2 class="text-xl font-semibold text-gray-900 dark:text-white">Gerenciamento de Usuários</h2>
+<button class="w-full md:w-auto flex items-center justify-center gap-2 bg-primary text-white font-bold py-2 px-4 rounded-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary dark:focus:ring-offset-gray-800 transition-colors duration-300">
+<span class="material-symbols-outlined">person_add</span>
+            Criar Usuário
+        </button>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+<div>
+<label class="block text-sm font-medium text-gray-700 dark:text-gray-300" for="user-type">Filtrar por tipo:</label>
+<select class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:outline-none focus:ring-primary focus:border-primary sm:text-sm rounded-md" id="user-type" name="user-type">
+<option>Todos os Tipos</option>
+<option>Vendedor</option>
+<option>Comprador</option>
+<option>Administrador</option>
+</select>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 dark:text-gray-300" for="user-status">Filtrar por status:</label>
+<select class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:outline-none focus:ring-primary focus:border-primary sm:text-sm rounded-md" id="user-status" name="user-status">
+<option>Todos os Status</option>
+<option>Ativo</option>
+<option>Pendente</option>
+<option>Suspenso</option>
+</select>
+</div>
+</div>
+<div class="overflow-x-auto bg-white dark:bg-gray-800 rounded-lg">
+<table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+<thead class="bg-gray-50 dark:bg-gray-700">
+<tr>
+<th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider" scope="col">Nome</th>
+<th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider" scope="col">Tipo</th>
+<th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider" scope="col">Status</th>
+<th class="relative px-6 py-3" scope="col">
+<span class="sr-only">Ações</span>
+</th>
+</tr>
+</thead>
+<tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+<tr>
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="text-sm font-medium text-gray-900 dark:text-white">Ana Pereira</div>
+<div class="text-sm text-gray-500 dark:text-gray-400">ana.p@email.com</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">Vendedor</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Ativo</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium space-x-2">
+<button class="text-primary hover:text-green-700" title="Editar"><span class="material-symbols-outlined text-xl">edit</span></button>
+<button class="text-yellow-500 hover:text-yellow-700" title="Suspender"><span class="material-symbols-outlined text-xl">pause_circle</span></button>
+<button class="text-red-500 hover:text-red-700" title="Remover"><span class="material-symbols-outlined text-xl">delete</span></button>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="text-sm font-medium text-gray-900 dark:text-white">Bruno Costa</div>
+<div class="text-sm text-gray-500 dark:text-gray-400">bruno.c@email.com</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">Comprador</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Ativo</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium space-x-2">
+<button class="text-primary hover:text-green-700" title="Editar"><span class="material-symbols-outlined text-xl">edit</span></button>
+<button class="text-yellow-500 hover:text-yellow-700" title="Suspender"><span class="material-symbols-outlined text-xl">pause_circle</span></button>
+<button class="text-red-500 hover:text-red-700" title="Remover"><span class="material-symbols-outlined text-xl">delete</span></button>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="text-sm font-medium text-gray-900 dark:text-white">Juliana Martins</div>
+<div class="text-sm text-gray-500 dark:text-gray-400">juliana.m@email.com</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">Vendedor</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">Suspenso</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium space-x-2">
+<button class="text-primary hover:text-green-700" title="Editar"><span class="material-symbols-outlined text-xl">edit</span></button>
+<button class="text-green-500 hover:text-green-700" title="Reativar"><span class="material-symbols-outlined text-xl">play_circle</span></button>
+<button class="text-red-500 hover:text-red-700" title="Remover"><span class="material-symbols-outlined text-xl">delete</span></button>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="text-sm font-medium text-gray-900 dark:text-white">Rafael Souza</div>
+<div class="text-sm text-gray-500 dark:text-gray-400">rafael.s@email.com</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">Administrador</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Ativo</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium space-x-2">
+<button class="text-primary hover:text-green-700" title="Editar"><span class="material-symbols-outlined text-xl">edit</span></button>
+<button class="text-yellow-500 hover:text-yellow-700" title="Suspender"><span class="material-symbols-outlined text-xl">pause_circle</span></button>
+<button class="text-red-500 hover:text-red-700" title="Remover"><span class="material-symbols-outlined text-xl">delete</span></button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p class="text-center text-xs text-white dark:text-gray-400 mt-6">
+    © 2024 CredCarbo. Todos os direitos reservados.
+</p>
+</main>
+</div>
+
+</body></html>
