@@ -4,17 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comprar Créditos de Carbono</title>
-    <link rel="stylesheet" href="sstyle.css">
+    <link rel="stylesheet" href="compra.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-
-    
-
-    **<header>
-        <img src="image_bc26d8.png" alt="Cabeçalho e navegação do site CredCarbo" style="width: 100%; display: block;">
-    </header>
-    **
 
     <main class="hero-section">
         <div class="hero-content">
@@ -92,7 +85,10 @@
                 </div>
     
                 <div class="form-group">
-                    <button type="submit" class="btn-submit">Comprar</button>
+                   <button type="submit" class="btn-submit">
+                        <span class="spinner"></span>
+                        <span class="btn-text">Comprar</span>
+                    </button>
                 </div>
             </form>
         </div>
@@ -128,34 +124,122 @@
                 </div>
     
                 <div class="form-group">
-                    <button type="submit" class="btn-submit">Solicitar Cotação</button>
+                    <button type="submit" class="btn-submit">
+                        <span class="spinner"></span>
+                        <span class="btn-text">Solicitar Cotação</span>
+                    </button>
                 </div>
             </form>
         </div>
 
-    </section>
+    </section> <div id="successModal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2 id="modalTitle"></h2>
+            <p id="modalMessage"></p>
+            <button id="modalCloseBtn" class="btn-modal-close">Entendido</button>
+        </div>
+    </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        
+        // --- SEU CÓDIGO EXISTENTE (PARA TROCAR OS FORMS) ---
+        const cards = document.querySelectorAll('.path-card');
+        const forms = document.querySelectorAll('.purchase-form');
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const cards = document.querySelectorAll('.path-card');
-            const forms = document.querySelectorAll('.purchase-form');
+        cards.forEach(card => {
+            card.addEventListener('click', function() {
+                const formId = this.dataset.formId;
+                const targetForm = document.getElementById(formId);
 
-            cards.forEach(card => {
-                card.addEventListener('click', function() {
-                    const formId = this.dataset.formId;
-                    const targetForm = document.getElementById(formId);
+                cards.forEach(c => c.classList.remove('active'));
+                forms.forEach(f => f.classList.remove('active'));
 
-                    cards.forEach(c => c.classList.remove('active'));
-                    forms.forEach(f => f.classList.remove('active'));
-
-                    this.classList.add('active');
-                    if (targetForm) {
-                        targetForm.classList.add('active');
-                    }
-                });
+                this.classList.add('active');
+                if (targetForm) {
+                    targetForm.classList.add('active');
+                }
             });
         });
-    </script>
+
+        // --- NOVO CÓDIGO (PARA ANIMAÇÃO E MODAL) ---
+
+        // 1. Seleciona os elementos do Modal
+        const modalOverlay = document.getElementById('successModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalMessage = document.getElementById('modalMessage');
+        const modalCloseBtn = document.getElementById('modalCloseBtn');
+        const modalCloseX = document.querySelector('.modal-close');
+
+        // 2. Seleciona TODOS os formulários da página
+        const allForms = document.querySelectorAll('.purchase-form form');
+
+        // 3. Adiciona o 'escutador' de envio para CADA formulário
+        allForms.forEach(form => {
+            form.addEventListener('submit', function(event) {
+                // Previne que a página recarregue
+                event.preventDefault();
+
+                // Pega o botão e o texto DENTRO do formulário que foi enviado
+                const submitButton = form.querySelector('.btn-submit');
+                const btnText = submitButton.querySelector('.btn-text');
+                const originalBtnText = btnText.textContent; // Salva o texto original
+
+                // --- Inicia a Animação ---
+                btnText.textContent = 'Enviando...';
+                submitButton.classList.add('btn-submit--loading');
+                submitButton.disabled = true;
+
+                // --- Simula o tempo de envio (2 segundos) ---
+                setTimeout(function() {
+                    
+                    // --- Define a mensagem correta para o Modal ---
+                    const parentFormDiv = form.closest('.purchase-form');
+                    
+                    if (parentFormDiv.id === 'form-rapida') {
+                        modalTitle.textContent = 'Compra Realizada!';
+                        modalMessage.textContent = 'Obrigado! Você receberá a confirmação e seu certificado no e-mail informado.';
+                    } else if (parentFormDiv.id === 'form-corporativa') {
+                        modalTitle.textContent = 'Solicitação Enviada!';
+                        modalMessage.textContent = 'Nossa equipe de especialistas recebeu seus dados e entrará em contato em breve.';
+                    }
+
+                    // --- Para a Animação ---
+                    btnText.textContent = originalBtnText; // Restaura o texto original
+                    submitButton.classList.remove('btn-submit--loading');
+                    submitButton.disabled = false;
+                    
+                    // --- Mostra o Modal ---
+                    modalOverlay.classList.add('show');
+
+                    // Limpa o formulário
+                    form.reset();
+
+                }, 2000); // 2 segundos de espera
+            });
+        });
+
+        // 4. Função para fechar o modal
+        function fecharModal() {
+            modalOverlay.classList.remove('show');
+        }
+
+        // 5. Adiciona eventos de clique para fechar o modal
+        modalCloseBtn.addEventListener('click', fecharModal); // No botão "Entendido"
+        modalCloseX.addEventListener('click', fecharModal);   // No "X"
+
+        // 6. Opcional: Fechar ao clicar fora da janelinha
+        modalOverlay.addEventListener('click', function(event) {
+            if (event.target === modalOverlay) {
+                fecharModal();
+            }
+        });
+
+    });
+</script>
 
 </body>
 </html>
