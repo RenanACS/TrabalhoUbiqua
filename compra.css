@@ -228,3 +228,129 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
+/* ========================================
+   CSS DA ANIMAÇÃO DO BOTÃO E MODAL
+   ======================================== */
+
+/* --- Animação do Botão "Carregando" --- */
+.btn-submit {
+    position: relative; /* Necessário para centralizar o spinner */
+}
+
+.btn-submit .spinner {
+    display: none; /* Escondido por padrão */
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+    margin-right: 10px;
+    vertical-align: middle; /* Alinha o spinner com o texto */
+}
+
+/* Classe que o JavaScript vai adicionar */
+.btn-submit--loading .spinner {
+    display: inline-block; /* Mostra o spinner */
+}
+.btn-submit--loading .btn-text {
+    vertical-align: middle;
+}
+
+/* Desabilita o botão enquanto carrega */
+.btn-submit:disabled {
+    /* Usando as cores do seu tema */
+    background: linear-gradient(to right, #888, #777);
+    cursor: not-allowed;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+
+/* --- Estilo da Janela Modal (Pop-up) --- */
+.modal-overlay {
+    display: none; /* Escondido por padrão */
+    position: fixed; /* Fica por cima de tudo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Classe que o JavaScript vai adicionar para mostrar */
+.modal-overlay.show {
+    display: flex; 
+}
+
+.modal-content {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 500px;
+    width: 90%; /* Responsivo */
+    position: relative;
+    /* Animação de surgimento */
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.modal-icon {
+    font-size: 3.5rem;
+    color: #5cb85c; /* Cor verde do seu tema */
+    margin-bottom: 20px;
+}
+
+.modal-content h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.modal-content p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2rem;
+    color: #aaa;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+.modal-close:hover {
+    color: #333;
+}
+
+/* Botão de fechar o modal */
+.btn-modal-close {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    /* Reutiliza o estilo do seu botão de submit */
+    background: linear-gradient(to right, #5cb85c, #4cae4c);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+.btn-modal-close:hover {
+    background: linear-gradient(to right, #4cae4c, #5cb85c);
+}
