@@ -4,17 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comprar Créditos de Carbono</title>
-    <link rel="stylesheet" href="sstyle.css">
+    <link rel="stylesheet" href="compra.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-
-    
-
-    **<header>
-        <img src="image_bc26d8.png" alt="Cabeçalho e navegação do site CredCarbo" style="width: 100%; display: block;">
-    </header>
-    **
 
     <main class="hero-section">
         <div class="hero-content">
@@ -60,7 +53,7 @@
                 
                 <div class="form-group">
                     <label for="quantidade">QUANTIDADE (QUANTIDADE DE CRÉDITOS QUE DESEJA COMPRAR) *</label>
-                    <input type="text" id="quantidade" name="quantidade" placeholder="Ex: 50" required>
+                    <input type="text" id="quantidade" name="quantidade" placeholder="Ex: 50" value="20" required>
                 </div>
     
                 <div class="form-group radio-group">
@@ -73,26 +66,29 @@
     
                 <div class="form-group">
                     <label for="nome_empresa_rapida">SEU NOME OU NOME DA EMPRESA *</label>
-                    <input type="text" id="nome_empresa_rapida" name="nome_empresa_rapida" required>
+                    <input type="text" id="nome_empresa_rapida" name="nome_empresa_rapida" value="Maria Lima" required>
                 </div>
     
                 <div class="form-group">
                     <label for="cpf_cnpj">CPF OU CNPJ *</label>
-                    <input type="text" id="cpf_cnpj" name="cpf_cnpj" required>
+                    <input type="text" id="cpf_cnpj" name="cpf_cnpj" value="123.456.789-00" required>
                 </div>
     
                 <div class="form-group">
                     <label for="email_rapida">E-MAIL *</label>
-                    <input type="email" id="email_rapida" name="email_rapida" required>
+                    <input type="email" id="email_rapida" name="email_rapida" value="maria.lima@email.com" required>
                 </div>
     
                 <div class="form-group">
                     <label for="telefone_rapida">WHATSAPP OU TELEFONE *</label>
-                    <input type="text" id="telefone_rapida" name="telefone_rapida" required>
+                    <input type="text" id="telefone_rapida" name="telefone_rapida" value="(11) 98765-4321" required>
                 </div>
     
                 <div class="form-group">
-                    <button type="submit" class="btn-submit">Comprar</button>
+                   <button type="submit" class="btn-submit">
+                        <span class="spinner"></span>
+                        <span class="btn-text">Comprar</span>
+                    </button>
                 </div>
             </form>
         </div>
@@ -104,58 +100,135 @@
 
                 <div class="form-group">
                     <label for="nome_corporativo">SEU NOME *</label>
-                    <input type="text" id="nome_corporativo" name="nome_corporativo" required>
+                    <input type="text" id="nome_corporativo" name="nome_corporativo" value="João Santos" required>
                 </div>
                 
                 <div class="form-group">
                     <label for="empresa_corporativa">NOME DA EMPRESA *</label>
-                    <input type="text" id="empresa_corporativa" name="empresa_corporativa" required>
+                    <input type="text" id="empresa_corporativa" name="empresa_corporativa" value="Corporate Soluções Ltda" required>
                 </div>
 
                 <div class="form-group">
                     <label for="email_corporativo">E-MAIL CORPORATIVO *</label>
-                    <input type="email" id="email_corporativo" name="email_corporativo" required>
+                    <input type="email" id="email_corporativo" name="email_corporativo" value="joao.santos@corporate.com" required>
                 </div>
     
                 <div class="form-group">
                     <label for="telefone_corporativo">TELEFONE / WHATSAPP *</label>
-                    <input type="text" id="telefone_corporativo" name="telefone_corporativo" required>
+                    <input type="text" id="telefone_corporativo" name="telefone_corporativo" value="(11) 91234-5678" required>
                 </div>
 
                 <div class="form-group">
                     <label for="volume_desejado">VOLUME APROXIMADO DE CRÉDITOS *</label>
-                    <input type="text" id="volume_desejado" name="volume_desejado" placeholder="Ex: 150, 1000, 5000+" required>
+                    <input type="text" id="volume_desejado" name="volume_desejado" placeholder="Ex: 150, 1000, 5000+" value="1500" required>
                 </div>
     
                 <div class="form-group">
-                    <button type="submit" class="btn-submit">Solicitar Cotação</button>
+                    <button type="submit" class="btn-submit">
+                        <span class="spinner"></span>
+                        <span class="btn-text">Solicitar Cotação</span>
+                    </button>
                 </div>
             </form>
         </div>
 
-    </section>
+    </section> 
+    
+    <div id="successModal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2 id="modalTitle"></h2>
+            <p id="modalMessage"></p>
+            <button id="modalCloseBtn" class="btn-modal-close">Entendido</button>
+        </div>
+    </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const cards = document.querySelectorAll('.path-card');
-            const forms = document.querySelectorAll('.purchase-form');
+    document.addEventListener('DOMContentLoaded', function() {
+        
+        const cards = document.querySelectorAll('.path-card');
+        const forms = document.querySelectorAll('.purchase-form');
 
-            cards.forEach(card => {
-                card.addEventListener('click', function() {
-                    const formId = this.dataset.formId;
-                    const targetForm = document.getElementById(formId);
+        cards.forEach(card => {
+            card.addEventListener('click', function() {
+                const formId = this.dataset.formId;
+                const targetForm = document.getElementById(formId);
 
-                    cards.forEach(c => c.classList.remove('active'));
-                    forms.forEach(f => f.classList.remove('active'));
+                cards.forEach(c => c.classList.remove('active'));
+                forms.forEach(f => f.classList.remove('active'));
 
-                    this.classList.add('active');
-                    if (targetForm) {
-                        targetForm.classList.add('active');
-                    }
-                });
+                this.classList.add('active');
+                if (targetForm) {
+                    targetForm.classList.add('active');
+                }
             });
         });
-    </script>
+
+        const modalOverlay = document.getElementById('successModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalMessage = document.getElementById('modalMessage');
+        const modalCloseBtn = document.getElementById('modalCloseBtn');
+        const modalCloseX = document.querySelector('.modal-close');
+
+        const allForms = document.querySelectorAll('.purchase-form form');
+
+        allForms.forEach(form => {
+            form.addEventListener('submit', function(event) {
+            
+                event.preventDefault();
+
+               
+                const submitButton = form.querySelector('.btn-submit');
+                const btnText = submitButton.querySelector('.btn-text');
+                const originalBtnText = btnText.textContent; 
+                
+                btnText.textContent = 'Enviando...';
+                submitButton.classList.add('btn-submit--loading');
+                submitButton.disabled = true;
+
+                setTimeout(function() {
+                    
+                    
+                    const parentFormDiv = form.closest('.purchase-form');
+                    
+                    if (parentFormDiv.id === 'form-rapida') {
+                        modalTitle.textContent = 'Compra Realizada!';
+                        modalMessage.textContent = 'Obrigado! Você receberá a confirmação e seu certificado no e-mail informado.';
+                    } else if (parentFormDiv.id === 'form-corporativa') {
+                        modalTitle.textContent = 'Solicitação Enviada!';
+                        modalMessage.textContent = 'Nossa equipe de especialistas recebeu seus dados e entrará em contato em breve.';
+                    }
+
+                   
+                    btnText.textContent = originalBtnText;
+                    submitButton.classList.remove('btn-submit--loading');
+                    submitButton.disabled = false;
+                    
+                    modalOverlay.classList.add('show');
+
+                
+                }, 2000);
+            });
+        });
+
+        function fecharModal() {
+            modalOverlay.classList.remove('show');
+        }
+
+        modalCloseBtn.addEventListener('click', fecharModal); 
+        modalCloseX.addEventListener('click', fecharModal);  
+
+        modalOverlay.addEventListener('click', function(event) {
+            if (event.target === modalOverlay) {
+                fecharModal();
+            }
+        });
+
+    });
+</script>
 
 </body>
 </html>
