@@ -1,0 +1,198 @@
+/* --- CONFIGURAÇÕES GLOBAIS --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Cor de fundo principal (verde escuro) */
+    background-color: #1b4d3e; 
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Garante que a página ocupe pelo menos a altura da tela */
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Link padrão */
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+/* --- 1. CABEÇALHO (NAVBAR) --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 5%; /* Espaçamento interno */
+    width: 100%;
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espaço entre o ícone e o texto */
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px; /* Espaço entre os links */
+}
+
+.nav-links a {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.whatsapp {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+}
+
+.whatsapp .fa-whatsapp {
+    font-size: 1.3rem;
+}
+
+/* --- ESTILOS GERAIS DE BOTÃO (COMPARTILHADOS) --- */
+.btn {
+    padding: 10px 22px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    transition: all 0.3s ease; /* Efeito suave ao passar o mouse */
+}
+
+/* Botão "Vender créditos" (no header) */
+.btn-vender {
+    background-color: #32cd32; /* Verde limão */
+    color: #1b4d3e; /* Texto verde escuro */
+}
+
+.btn-vender:hover {
+    filter: brightness(1.1); /* Deixa um pouco mais claro */
+}
+
+/* Botão "Comprar créditos" (no header) */
+.btn-comprar {
+    color: #ffffff;
+    background-color: transparent;
+}
+.btn-comprar:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+/* --- 2. CONTEÚDO PRINCIPAL (HERO) --- */
+.hero-section {
+    /* Esta propriedade faz o 'main' crescer para ocupar o espaço
+       disponível, empurrando o rodapé (cookie) para baixo */
+    flex-grow: 1; 
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.hero-content {
+    max-width: 750px; /* Limita a largura do texto */
+}
+
+.hero-content h1 {
+    font-size: 3.8rem; /* 60px */
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.125rem; /* 18px */
+    color: #e0e0e0; /* Um branco um pouco mais suave */
+    margin-bottom: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Espaço entre os botões */
+}
+
+/* Botão verde "Saiba Mais" */
+.btn-primary {
+    background-color: #32cd32; /* Verde limão */
+    color: #1b4d3e; /* Texto verde escuro */
+    font-size: 1.1rem;
+}
+.btn-primary:hover {
+    filter: brightness(1.1);
+}
+
+/* Botão "Entre em Contato" */
+.btn-secondary {
+    background-color: rgba(0, 0, 0, 0.25); /* Fundo escuro transparente */
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Borda branca transparente */
+    font-size: 1.1rem;
+}
+.btn-secondary:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+    border-color: #ffffff;
+}
+
+/* --- 3. RODAPÉ (BANNER DE COOKIE) --- */
+.cookie-banner {
+    position: fixed; /* Fica fixo na tela */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    
+    background-color: #0c2b40; /* Azul escuro */
+    color: #e0e0e0;
+    
+    padding: 20px 5%;
+    border-top: 3px solid #0d6efd; /* Linha azul brilhante */
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.cookie-banner p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.cookie-banner a {
+    color: #ffffff;
+    text-decoration: underline; /* Sublinhado */
+}
+
+/* Botão "Aceitar e fechar" */
+.btn-cookie {
+    background-color: #32cd32; /* Verde limão */
+    color: #1b4d3e; /* Texto verde escuro */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    white-space: nowrap; /* Impede que o texto quebre a linha */
+}
+
+.btn-cookie:hover {
+    filter: brightness(1.1);
+}
