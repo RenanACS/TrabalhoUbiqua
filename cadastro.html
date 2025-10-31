@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cadastro de Usuário - CredCarbo</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#4CAF50",
+                        "background-light": "#F7F9F8",
+                        "background-dark": "#121212",
+                    },
+                    fontFamily: {
+                        display: ["Sora", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "1rem",
+                    },
+                },
+            },
+        };
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-primary dark:bg-background-dark font-display text-gray-800 dark:text-gray-200 antialiased" x-data="{ userType: '', showPinModal: false }">
+<div class="flex flex-col items-center justify-center min-h-screen p-4 sm:p-6 lg:p-8">
+<main class="w-full max-w-2xl mx-auto">
+<div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 sm:p-8 md:p-10">
+<div class="text-center mb-8">
+<h1 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">Criar Nova Conta</h1>
+<p class="text-gray-500 dark:text-gray-400 mt-2">Preencha os campos abaixo para se cadastrar na plataforma.</p>
+</div>
+<form action="#" class="space-y-6" method="POST">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<div class="sm:col-span-2">
+<label class="block text-sm font-semibold text-gray-700 dark:text-gray-300" for="full-name">Nome Completo</label>
+<input class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-primary focus:ring-primary dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:focus:border-primary sm:text-sm" id="full-name" name="full-name" placeholder="Digite seu nome completo" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-semibold text-gray-700 dark:text-gray-300" for="cpf-cnpj">CPF ou CNPJ</label>
+<input class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-primary focus:ring-primary dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:focus:border-primary sm:text-sm" id="cpf-cnpj" name="cpf-cnpj" placeholder="000.000.000-00" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-semibold text-gray-700 dark:text-gray-300" for="organization-name">Nome da Organização</label>
+<input class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-primary focus:ring-primary dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:focus:border-primary sm:text-sm" id="organization-name" name="organization-name" placeholder="Nome da sua empresa" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-semibold text-gray-700 dark:text-gray-300" for="phone">Telefone</label>
+<input class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-primary focus:ring-primary dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:focus:border-primary sm:text-sm" id="phone" name="phone" placeholder="(00) 00000-0000" type="tel"/>
+</div>
+<div>
+<label class="block text-sm font-semibold text-gray-700 dark:text-gray-300" for="email">E-mail</label>
+<input class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-primary focus:ring-primary dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:focus:border-primary sm:text-sm" id="email" name="email" placeholder="seuemail@exemplo.com" type="email"/>
+</div>
+</div>
+<div class="border-t border-gray-200 dark:border-gray-700 my-6"></div>
+<div>
+<label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">Tipo de Usuário</label>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+<label class="flex items-center p-4 border border-gray-300 dark:border-gray-600 rounded-lg cursor-pointer hover:bg-primary/10 hover:border-primary transition-colors has-[:checked]:border-primary has-[:checked]:bg-primary/10">
+<input @change="showPinModal = ($event.target.value === 'admin')" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:bg-gray-700 dark:border-gray-600" id="user-type-admin" name="user-type" type="radio" value="admin" x-model="userType"/>
+<span class="ml-3 text-sm text-gray-700 dark:text-gray-200">Administrador</span>
+</label>
+<label class="flex items-center p-4 border border-gray-300 dark:border-gray-600 rounded-lg cursor-pointer hover:bg-primary/10 hover:border-primary transition-colors has-[:checked]:border-primary has-[:checked]:bg-primary/10">
+<input class="h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:bg-gray-700 dark:border-gray-600" name="user-type" type="radio" value="seller" x-model="userType"/>
+<span class="ml-3 text-sm text-gray-700 dark:text-gray-200">Vendedor</span>
+</label>
+<label class="flex items-center p-4 border border-gray-300 dark:border-gray-600 rounded-lg cursor-pointer hover:bg-primary/10 hover:border-primary transition-colors has-[:checked]:border-primary has-[:checked]:bg-primary/10">
+<input class="h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:bg-gray-700 dark:border-gray-600" name="user-type" type="radio" value="buyer" x-model="userType"/>
+<span class="ml-3 text-sm text-gray-700 dark:text-gray-200">Comprador</span>
+</label>
+</div>
+</div>
+<div class="border-t border-gray-200 dark:border-gray-700 my-6 pt-6"></div>
+<div class="flex flex-col-reverse sm:flex-row sm:justify-end sm:gap-4">
+<button class="mt-4 sm:mt-0 w-full sm:w-auto flex items-center justify-center gap-2 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 font-bold py-3 px-6 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 dark:focus:ring-offset-gray-800 transition-colors duration-300" type="button"> Voltar/Cancelar </button>
+<button class="w-full sm:w-auto flex items-center justify-center gap-2 bg-primary text-white font-bold py-3 px-6 rounded-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary dark:focus:ring-offset-gray-800 transition-colors duration-300" type="submit"> Cadastrar </button>
+</div>
+</form>
+</div>
+<p class="text-center text-xs text-white dark:text-gray-400 mt-6"> © 2024 RuralCarbo. Todos os direitos reservados. </p>
+</main>
+</div>
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4" style="display: none;" x-show="showPinModal" x-transition:enter="ease-out duration-300" x-transition:enter-end="opacity-100" x-transition:enter-start="opacity-0" x-transition:leave="ease-in duration-200" x-transition:leave-end="opacity-0" x-transition:leave-start="opacity-100">
+<div @click="showPinModal = false; userType = ''" class="fixed inset-0 bg-gray-900 bg-opacity-75"></div>
+<div @click.stop="" class="bg-white dark:bg-gray-800 rounded-lg shadow-xl p-6 sm:p-8 w-full max-w-md text-center transform transition-all" x-show="showPinModal" x-transition:enter="ease-out duration-300" x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100" x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" x-transition:leave="ease-in duration-200" x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100">
+<h2 class="text-xl font-bold text-gray-900 dark:text-white">Confirmação de Administrador</h2>
+<p class="text-gray-500 dark:text-gray-400 mt-2">Para prosseguir, por favor, insira o código PIN obrigatório.</p>
+<div class="my-6">
+<label class="sr-only" for="pin-code">Código PIN</label>
+<input class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-primary focus:ring-primary dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:focus:border-primary sm:text-sm text-center tracking-widest" id="pin-code" maxlength="6" name="pin-code" placeholder="******" required="" type="password"/>
+</div>
+<div class="flex flex-col-reverse sm:flex-row gap-4 justify-center">
+<button @click="showPinModal = false; userType = ''" class="w-full sm:w-auto flex items-center justify-center gap-2 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 font-bold py-3 px-6 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 dark:focus:ring-offset-gray-800 transition-colors duration-300" type="button"> Cancelar </button>
+<button @click="showPinModal = false" class="w-full sm:w-auto flex items-center justify-center gap-2 bg-primary text-white font-bold py-3 px-6 rounded-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary dark:focus:ring-offset-gray-800 transition-colors duration-300" type="button"> Confirmar </button>
+</div>
+</div>
+</div>
+<script defer="" src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+
+</body></html>
